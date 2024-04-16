@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  min-width: 100vw;
   text-align: center;
   overflow: hidden;
 
@@ -34,9 +35,12 @@
     border-radius: 15px;
     padding: 10px 25px;
     cursor: pointer;
+    width: 43%;
+    aspect-ratio: 7/1;
+    
     margin: 0 10px;
     transition: all 0.05s ease-in-out;
-    & .spark {
+    & .square {
       position: absolute;
       left: 50%;
       top: 50%;
@@ -45,13 +49,14 @@
       height: 50%;
       aspect-ratio: 1;
       padding: 0;
+      z-index: 1;
     }
     &.minus {
       background-color: var(--color-2);
       color: #fff;
       box-shadow: 0 4px 0 darken(var(--color-2), 10%);
       border: 1px solid darken(var(--color-2), 15%);
-      & .spark {
+      & .square {
         background-color: var(--color-2);
       }
     }
@@ -61,6 +66,10 @@
       color: #fff;
       box-shadow: 0 4px 0 darken(var(--color-1), 10%);
       border: 1px solid darken(var(--color-1), 15%);
+      & .square {
+        background-color: var(--color-1);
+      }
+
     }
 
     &:hover {

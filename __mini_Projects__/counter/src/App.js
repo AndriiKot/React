@@ -11,11 +11,18 @@ function App() {
 
   const createSpanElement = (event, count = 0) => {
     for (let i = 0; i < count; i++) {
-      const spark = document.createElement("span");
-      spark.classList.add("spark");
-      event.target.append(spark);
+      const square = document.createElement("span");
+      square.classList.add("square");
+      event.target.append(square);
 
-      setTimeout(() => spark.remove(), 2000);
+      const randomX = (Math.random() - 0.5) * window.innerWidth;
+      const randomY = (Math.random() - 0.5) * window.innerHeight;
+
+      square.style.left = randomX + "px";
+      square.style.top = randomY + "px";
+
+      square.style.height = Math.random() * (60 - 10) + 10 + "%";
+      setTimeout(() => square.remove(), 2000);
     }
     console.dir(event.target);
   };
@@ -25,15 +32,20 @@ function App() {
     createSpanElement(event, 50);
   };
 
+  const handlePlusClick = (event) => {
+    counterPlus(); 
+    createSpanElement(event, 50);
+  };
+
   return (
     <div className="App">
-      <div>
+      <div className="wrapper">
         <h2>Counter:</h2>
         <h1>{counter}</h1>
         <button onClick={handleMinusClick} className="minus">
           - Minus
         </button>
-        <button onClick={counterPlus} className="plus">
+        <button onClick={handlePlusClick} className="plus">
           Plus +
         </button>
       </div>
