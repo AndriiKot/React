@@ -24,26 +24,8 @@ function App() {
       square.style.height = Math.random() * (60 - 10) + 10 + "%";
       setTimeout(() => square.remove(), 2000);
     }
-    const [coordinatesX, coordinatesY, el] =
-      getCoordinatesXandY(".counter__number");
-
-    console.log(coordinatesX, coordinatesY, el);
-
-    document.body.style.setProperty(`--x-${el.className}`, (coordinatesX - 1000) + "px");
-    document.body.style.setProperty(`--y-${el.className}`, (coordinatesY - 1000) + "px");
- 
-    console.dir(el);
   };
 
-
-
-  const getCoordinatesXandY = (className, el) => {
-    el = document.querySelector(className);
-    const rect = el.getBoundingClientRect();
-    console.log(rect.x);
-    console.log(rect.y);
-    return [rect.x, rect.y, el];
-  };
   const handleMinusClick = (event) => {
     counterMinus();
     createSpanElement(event, 50);
