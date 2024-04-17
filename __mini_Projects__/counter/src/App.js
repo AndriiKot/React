@@ -18,13 +18,12 @@ function App() {
       const randomX = (Math.random() - 0.5) * window.innerWidth;
       const randomY = (Math.random() - 0.5) * window.innerHeight;
 
-      square.style.left = randomX + "px";
-      square.style.top = randomY + "px";
+      square.style.setProperty('--x', randomX + "px");
+      square.style.setProperty('--y', randomY + "px");
 
       square.style.height = Math.random() * (60 - 10) + 10 + "%";
       setTimeout(() => square.remove(), 2000);
     }
-    console.dir(event.target);
   };
 
   const handleMinusClick = (event) => {
