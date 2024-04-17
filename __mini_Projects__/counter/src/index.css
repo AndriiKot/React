@@ -25,10 +25,13 @@ code {
     opacity: 1;
     transform: translate(0, 0);
   }
+  60%{
+    opacity: 0.5;
+    transform: translate(var(--x), var(--y));
+  }
   100%{
     opacity: 0;
-    transform: translate(var(--x), var(--y));
-    z-index: -1;
+    transform: translate(var(--x-counter__number), var(--y-counter__number));
   }
 }
 

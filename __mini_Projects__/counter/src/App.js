@@ -24,21 +24,26 @@ function App() {
       square.style.height = Math.random() * (60 - 10) + 10 + "%";
       setTimeout(() => square.remove(), 2000);
     }
-    getCoordinates(".counter__number");
-    // const counterNumber = document.querySelector(".counter__number");
-    // const domRectCounterNumber = counterNumber.getBoundingClientRect();
+    const [coordinatesX, coordinatesY, el] =
+      getCoordinatesXandY(".counter__number");
 
-    // console.log(domRectCounterNumber.top);
-    // console.log(domRectCounterNumber.left);
+    console.log(coordinatesX, coordinatesY, el);
+
+    document.body.style.setProperty(`--x-${el.className}`, (coordinatesX - 1000) + "px");
+    document.body.style.setProperty(`--y-${el.className}`, (coordinatesY - 1000) + "px");
+ 
+    console.dir(el);
   };
 
 
-const getCoordinates = (className, el) => {
-  el =  document.querySelector(className);
-  const rect = el.getBoundingClientRect();
-  console.log(rect.top);
-  console.log(rect.left);
-}
+
+  const getCoordinatesXandY = (className, el) => {
+    el = document.querySelector(className);
+    const rect = el.getBoundingClientRect();
+    console.log(rect.x);
+    console.log(rect.y);
+    return [rect.x, rect.y, el];
+  };
   const handleMinusClick = (event) => {
     counterMinus();
     createSpanElement(event, 50);
