@@ -1,4 +1,4 @@
-.App {
+.App__counter {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,7 +7,7 @@
   text-align: center;
   overflow: hidden;
 
-  h1 {
+  .counter__number {
     color: var(--color-4);
     font-size: 7rem;
     margin: 0;
@@ -20,7 +20,7 @@
     }
   }
 
-  h2 {
+  .counter__title {
     font-size: 2rem;
     margin: 0;
     color: var(--color-3);
@@ -49,7 +49,7 @@
       height: 50%;
       aspect-ratio: 1;
       padding: 0;
-      z-index: 1;
+      z-index: -1;
       animation: animate 2s linear forwards;
     }
     &.minus {

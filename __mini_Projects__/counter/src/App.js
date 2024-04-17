@@ -3,8 +3,16 @@ import "./index.css";
 import "./App.css";
 import React, { useState } from "react";
 
+  const counter__number = document.querySelector(".counter__number");
+  const domRectCounterNumber = counter__number.getBoundingClientRect();
+
+  console.log(domRectCounterNumber.top);
+  console.log(domRectCounterNumber.left);
+
 function App() {
   let [counter, setCounter] = useState(0);
+
+
 
   const counterPlus = () => setCounter(counter + 1);
   const counterMinus = () => setCounter(counter - 1);
@@ -37,10 +45,10 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App__counter">
       <div className="wrapper">
-        <h2>Counter:</h2>
-        <h1>{counter}</h1>
+        <h2 className="counter__title">Counter:</h2>
+        <h1 className="counter__number">{counter}</h1>
         <button onClick={handleMinusClick} className="minus">
           - Minus
         </button>
