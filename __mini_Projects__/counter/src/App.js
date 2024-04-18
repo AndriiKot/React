@@ -1,7 +1,7 @@
 import "./normalize.css";
 import "./index.css";
 import "./App.css";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function App() {
   let [counter, setCounter] = useState(0);
@@ -26,14 +26,16 @@ function App() {
     }
   };
 
-  const handleMinusClick = (event) => {
+  const handleMinusClick = (event,c = counter) => {
+    if (c < 0) { c *= -1; }
     counterMinus();
-    createSpanElement(event, 50);
+    createSpanElement(event, c + 1);
   };
 
-  const handlePlusClick = (event) => {
+  const handlePlusClick = (event,c = counter) => {
+    if (c < 0) { c *= -1; }
     counterPlus();
-    createSpanElement(event, 50);
+    createSpanElement(event, c + 1);
   };
 
   return (
