@@ -1,4 +1,5 @@
 import "./index.css";
+import "./normalize.css";
 import "./App.css";
 import Counter from "./components/Counter";
 
