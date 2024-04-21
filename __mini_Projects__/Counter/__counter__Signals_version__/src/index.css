@@ -1,4 +1,9 @@
 :root {
+  --color-1: #2a9d8f;
+  --color-2: #e63946;
+  --color-3: #556581;
+  /* --color-4: #11150f; */
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -12,4 +17,41 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@keyframes animate-plus {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.7;
+    transform: translate(var(--x), var(--y));
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateX(-500%) translateY(-500%);
+  }
+}
+
+@keyframes animate-minus {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(500%) translateY(-500%);
+  }
+  80% {
+    opacity: 0.7;
+
+    transform: translate(var(--x), var(--y));
+  }
+  100% {
+    opacity: 0.2;
+    transform: translate(0, 0);
+  }
+}
+
 
