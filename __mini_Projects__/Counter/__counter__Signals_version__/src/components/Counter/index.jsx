@@ -9,6 +9,9 @@ export default function Counter() {
 
   const counterPlus = () => setCounter(counter + 1);
   const counterMinus = () => setCounter(counter - 1);
+  // const counterPlus = () => {
+  //   counter.value++;
+  // }
 
   const createSpanElement = (event, count = 0) => {
     for (let i = 0; i < count; i++) {
@@ -45,12 +48,16 @@ export default function Counter() {
   const testOnclickSignal = () => {
     testSignalCount.value++;
   };
+
+  const testWrapperOnclickSignal = () => {
+    testOnclickSignal();
+  };
   return (
       <div className="wrapper">
         <h2 className="counter__title">Counter:</h2>
         <h1 className="counter__number">{counter}</h1>
         <h3 className="testSignalCount">{testSignalCount.value}</h3>
-        <button onClick={testOnclickSignal} className="testSignalCount__button">TEST SIGNAL COUNT</button>
+        <button onClick={testWrapperOnclickSignal} className="testSignalCount__button">TEST SIGNAL COUNT</button>
         <button onClick={handleMinusClick} className="minus">
           - Minus
         </button>
