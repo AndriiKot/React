@@ -1,17 +1,12 @@
-﻿import { useState } from "react";
-import { signal } from "@preact/signals-react";
+﻿import { signal } from "@preact/signals-react";
 
-const testSignalCount = signal(0);
+const counter = signal(0);
 
 
 export default function Counter() {
-  let [counter, setCounter] = useState(0);
 
-  const counterPlus = () => setCounter(counter + 1);
-  const counterMinus = () => setCounter(counter - 1);
-  // const counterPlus = () => {
-  //   counter.value++;
-  // }
+  const counterPlus = () => counter.value++;
+  const counterMinus = () => counter.value--;
 
   const createSpanElement = (event, count = 0) => {
     for (let i = 0; i < count; i++) {
@@ -45,19 +40,11 @@ export default function Counter() {
     counterPlus();
     createSpanElement(event, c + 1);
   };
-  const testOnclickSignal = () => {
-    testSignalCount.value++;
-  };
 
-  const testWrapperOnclickSignal = () => {
-    testOnclickSignal();
-  };
   return (
       <div className="wrapper">
         <h2 className="counter__title">Counter:</h2>
-        <h1 className="counter__number">{counter}</h1>
-        <h3 className="testSignalCount">{testSignalCount.value}</h3>
-        <button onClick={testWrapperOnclickSignal} className="testSignalCount__button">TEST SIGNAL COUNT</button>
+        <h1 className="counter__number">{counter.value}</h1>
         <button onClick={handleMinusClick} className="minus">
           - Minus
         </button>
