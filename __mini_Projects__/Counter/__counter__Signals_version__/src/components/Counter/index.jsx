@@ -1,10 +1,6 @@
-﻿import { signal } from "@preact/signals-react";
-
-const counter = signal(0);
-
+﻿import { state as counter } from "./state.js";
 
 export default function Counter() {
-
   const counterPlus = () => counter.value++;
   const counterMinus = () => counter.value--;
 
@@ -42,15 +38,15 @@ export default function Counter() {
   };
 
   return (
-      <div className="wrapper">
-        <h2 className="counter__title">Counter:</h2>
-        <h1 className="counter__number">{counter.value}</h1>
-        <button onClick={handleMinusClick} className="minus">
-          - Minus
-        </button>
-        <button onClick={handlePlusClick} className="plus">
-          Plus +
-        </button>
-      </div>
+    <div className="wrapper">
+      <h2 className="counter__title">Counter:</h2>
+      <h1 className="counter__number">{counter.value}</h1>
+      <button onClick={handleMinusClick} className="minus">
+        - Minus
+      </button>
+      <button onClick={handlePlusClick} className="plus">
+        Plus +
+      </button>
+    </div>
   );
 }
