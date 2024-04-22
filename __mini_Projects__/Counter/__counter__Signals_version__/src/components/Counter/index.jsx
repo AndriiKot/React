@@ -1,4 +1,7 @@
 ﻿import { useState } from "react";
+import { signal } from "@preact/signals-react";
+
+const testSignalCount = signal(0);
 
 
 export default function Counter() {
@@ -44,6 +47,8 @@ export default function Counter() {
       <div className="wrapper">
         <h2 className="counter__title">Counter:</h2>
         <h1 className="counter__number">{counter}</h1>
+        <h3 className="testSignalCount">{testSignalCount.value}</h3>
+        <button onClick={() => testSignalCount.value++} className="testSignalCount__button">TEST SIGNAL COUNT</button>
         <button onClick={handleMinusClick} className="minus">
           - Minus
         </button>
