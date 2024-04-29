@@ -11,7 +11,9 @@ function App() {
       <button className="open-modal-btn" onClick={() => setOpen(true)}>
         ✨ Open Modal
       </button>
-      <Modal open={open} setOpen={setOpen} />
+      <Modal open={open} setOpen={setOpen}> 
+        <h3>Modal Window</h3>
+      </Modal>
     </div>
   );
 }

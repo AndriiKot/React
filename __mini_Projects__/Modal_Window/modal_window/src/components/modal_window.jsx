@@ -1,4 +1,4 @@
-﻿const Modal = ({ open, setOpen }) => {
+﻿const Modal = ({ open, setOpen, children }) => {
   return (
     <div className={`overlay animated ${open ? "show" : ""}`}>
       <div className="modal">
@@ -13,6 +13,8 @@
         </svg>
         <img src="https://media2.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif" />
       </div>
+
+      {children}
     </div>
   );
 };
