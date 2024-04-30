@@ -13,6 +13,7 @@ function App() {
       </button>
       <Modal open={open} setOpen={setOpen}> 
         <h3>Modal Window</h3>
+        <img src="../imegs/Luibchick_PNG.png" alt="Cat Luibchick" />
       </Modal>
     </div>
   );
