@@ -1,12 +1,19 @@
 import "./App.css";
-import reactLogo from "./assets/react.svg";
-import Video from "./Video";
+import Video from "./Video/Video";
+import { VIDEOS } from "./videos.js";
 
 function App() {
   return (
     <>
       <div className="video-container">
-        <Video title="Video 2" channelName="React JS" img={reactLogo} />
+        {VIDEOS.map((video) => (
+          <Video
+            key={video.id}
+            title={video.title}
+            channelName={video.channelName}
+            img={video.img}
+          />
+        ))}
       </div>
     </>
   );
