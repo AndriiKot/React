@@ -1,6 +1,7 @@
 ﻿projects = {
  "Only_React_01": 'https://github.com/AndriiKot/React_only__01.git',
  "Only_React_02": 'https://github.com/AndriiKot/React_only__02',
+ "React_03": "https://github.com/AndriiKot/React_03.git",
 }
 
 update = "git subtree pull --prefix "
