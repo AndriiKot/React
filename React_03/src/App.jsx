@@ -1,26 +1,30 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
+import "./Card/Card.css";
+import Card from "./Card/Card";
 
 function App() {
   const [posts, setPosts] = useState([]);
 
-  const fetchPosts = () => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((json) => setPosts(json));
+  const fetchPosts = async () => {
+    return fetch("https://jsonplaceholder.typicode.com/posts").then(
+      (response) => response.json()
+    );
   };
 
   useEffect(() => {
-    console.log("fetchPosts");
-    fetchPosts();
+    fetchPosts().then((data) => setPosts(data));
   }, []);
 
-  console.log("HI!!!");
-
   return (
-    <div>
+    <div className="cards-container">
       {posts.map((post) => (
-        <div key={post.id}>{post.title}</div>
+        <Card
+          key={post.id}
+          title={post.title}
+          body={post.body}
+          userId={post.userId}
+        />
       ))}
     </div>
   );
