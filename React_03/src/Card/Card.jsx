@@ -1,4 +1,6 @@
-﻿export default function Card(props) {
+﻿import "./Card.css";
+
+export default function Card(props) {
   const { title, body } = props;
   return (
     <div className="card">
