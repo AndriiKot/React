@@ -1,5 +1,7 @@
 ﻿# React My App 01
 
+## !!! For the application to work correctly, use 'Live Server' !!!
+
 <div class="logos">
   <span class="React">
     <a href="https://react.dev/">
@@ -57,3 +59,6 @@
   </span>
 
 </div>
+
+### React 01 v.2.0.0
+![React 01 Added Styles CSS](https://github.com/AndriiKot/React_only__01/blob/main/__demo__/images/_react_01_.png)

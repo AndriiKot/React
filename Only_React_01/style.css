@@ -1,4 +1,10 @@
-﻿html {
+﻿& {
+  --color-back: #bba3a3;
+  --color-first: #0b2656;
+  --color-second: #3c82f8;
+  --color-third: #f2f2f2;
+}
+html {
   box-sizing: border-box;
 }
 
@@ -11,6 +17,51 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  padding: 20px;
-  background-color: #f2f2f2;
+  padding: 0;
+  background-color: var(--color-back);
+}
+
+.container {
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+.App {
+  color: var(--color-first);
+  text-align: center;
+  width: 100%;
+  & .hidden {
+    visibility: hidden;
+  }
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    border-radius: 0;
+    min-width: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--color-third);
+    transition: 0.2s linear;
+    background: var(--color-second);
+    font-size: 3rem;
+    margin-left: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #3c82f8;
+  }
+  .btn-new:focus  {
+    box-shadow: none;
+  }
 }
