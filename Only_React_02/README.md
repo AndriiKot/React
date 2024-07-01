@@ -25,6 +25,8 @@
 
 </div>
 
+### Only React 02 v2.0.1: 
+![Only React 02 v0.5.0](https://github.com/AndriiKot/React_only__02/blob/main/__demo__/images/Only_React_02__v2_0_1__.png)
 ### Only React 02 v1.0.1: 
 ![Only React 02 v0.5.0](https://github.com/AndriiKot/React_only__02/blob/main/__demo__/images/Only_React_02__v1_0_1__.png)
 ### Only React 02 v0.5.0: 

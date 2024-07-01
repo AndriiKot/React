@@ -1,17 +1,18 @@
 import "./App.css";
-import Video from "./Video/Video";
-import { VIDEOS } from "./videos.js";
+import { IMAGES } from "./Cats/images.js";
+import CatCard from "./Cats/CatCard.jsx";
 
 function App() {
   return (
     <>
-      <div className="video-container">
-        {VIDEOS.map((video) => (
-          <Video
-            key={video.id}
-            title={video.title}
-            channelName={video.channelName}
-            img={video.img}
+      <div className="cat-container">
+        {IMAGES.map((image) => (
+          <CatCard
+            key={image.id}
+            id={image.id}
+            src={image.src}
+            alt={image.alt}
+            title={image.title}
           />
         ))}
       </div>
