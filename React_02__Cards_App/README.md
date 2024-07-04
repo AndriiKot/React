@@ -1,7 +1,6 @@
 # React My App 02
 ## Cards App
 
-
 <div class="logos">
   <span class="React">
     <a href="https://react.dev/">
