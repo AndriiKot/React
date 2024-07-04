@@ -1,9 +1,23 @@
-﻿require_relative 'config'
+﻿require 'concurrent'
+require_relative 'config'
 
-pull = "git subtree pull --prefix "
+Dir.chdir('..')
+threads = []
 
 PROJECTS.each do |folder, git_repo| 
-    system(`cd .. && #{pull}#{folder} #{git_repo} main`)
+    threads << Thread.new do
+        result = system("git subtree pull --prefix #{folder} #{git_repo} main")
+    end
 end
 
-system(`git push`)
+threads.each(&:join)
+
+
+push_thread = Thread.new do
+    result = system("git push")
+    unless result
+        puts "Error pushing changes"
+    end
+end
+
+push_thread.join

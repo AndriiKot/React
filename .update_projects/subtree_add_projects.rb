@@ -1,19 +1,27 @@
-﻿require_relative 'config'
+﻿require 'concurrent'
+require_relative 'config'
 
-add  = "git subtree add --prefix "
+Dir.chdir('..')
+threads = []
 
 PROJECTS.each do |folder, git_repo| 
-    if Dir.exist?("../#{folder}")
-#     Error !!!    system(`cd .. && echo "#{folder} already exists in the parent directory" `) !!!
-# 	  Error !!!    system(`cd .. && puts "#{folder} already exists in the parent directory" `) !!!
-#         !!! is not recognized as an internal or external command,
-#        operable program or batch file.  !!!!
-# Если папка с таким именем существует в родительском каталоге,
-#  то выводить в консоль сообщение "#{folder} already exists in the parent directory"
-# где 'folder' имя папки в родительском каталоге
-    else
-        system(`cd .. && #{add}#{folder} #{git_repo} main`)
+    threads << Thread.new do
+        result = if Dir.exist?(folder) 
+          puts "Error adding #{folder} from #{git_repo}"
+        else 
+          system("git subtree add --prefix #{folder} #{git_repo} main")
+        end
     end
 end
 
-system(`git push`)
+threads.each(&:join)
+
+
+push_thread = Thread.new do
+    result = system("git push")
+    unless result
+        puts "Error pushing changes"
+    end
+end
+
+push_thread.join
