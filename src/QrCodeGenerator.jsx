@@ -2,8 +2,7 @@
 
 export const QrCodeGenerator = () => {
   const ChangeValueTesting = "Testing Chage Value ";
-  const handleGenerate = (event) => {
-    console.log("Generate button clicked", event);
+  const handleGenerate = () => {
   };
   const onChangeGenerate = (event) => {
     console.log("On Change button clicked", event);
