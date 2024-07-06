@@ -1,7 +1,7 @@
 ﻿export const QrCodeGenerator = () => {
   return (
     <div>
-      <h1>QR Code Generator</h1>
+      <h3>QR Code Generator</h3>
     </div>
   );
 };

@@ -1,7 +1,10 @@
-﻿export const Layout = () => {
+﻿import { QrCodeGenerator } from "./QrCodeGenerator";
+
+export const Layout = () => {
   return (
     <div>
-      <h3>Layout</h3>
+      <h2>Layout</h2>
+      <QrCodeGenerator />
     </div>
   );
 };
