@@ -5,7 +5,7 @@ export const QrCodeGenerator = () => {
   const handleGenerate = () => {
   };
   const onChangeGenerate = (event) => {
-    console.log("On Change button clicked", event);
+    console.log(event.target.value);
   };
   return (
     <div>
