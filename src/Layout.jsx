@@ -1,7 +1,7 @@
 ﻿export const Layout = () => {
   return (
     <div>
-      <h1>Layout</h1>
+      <h3>Layout</h3>
     </div>
   );
 };
