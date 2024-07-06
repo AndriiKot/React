@@ -5,6 +5,8 @@ export const QrCodeGenerator = () => {
     <div>
       <h3>QR Code Generator</h3>
       <QRCodeSVG value="Testing QR Code 123" />
+      <input type="text" />
+      <button type="button">Generate</button>
     </div>
   );
 };
