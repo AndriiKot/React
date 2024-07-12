@@ -3,23 +3,23 @@ import { QRCodeSVG } from "qrcode.react";
 
 export const QrCodeGenerator = () => {
   const [inputValue, setInputValue] = useState("");
-  const [handleClick, setHandleClick] = useState('');
+  const [qrCodeValue, setQrCodeValue] = useState('');
 
   const handleGenerate = () => {
-    setHandleClick(inputValue);
+    setQrCodeValue(inputValue);
     setInputValue("");
   };
 
   const onChangeGenerate = (event) => {
     setInputValue(event.target.value);
-    setHandleClick('');
+    setQrCodeValue('');
   };
 
 
   return (
     <div>
       <h3>QR Code Generator</h3>
-      {handleClick !== '' && <QRCodeSVG value={handleClick} />}
+      { qrCodeValue !== '' && <QRCodeSVG value={qrCodeValue} />}
       <input type="text" value={inputValue} onChange={onChangeGenerate} />
       <button type="button" onClick={handleGenerate}>
         Generate
