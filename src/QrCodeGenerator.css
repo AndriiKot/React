@@ -1,6 +1,10 @@
 ﻿.wrapper__generator {
    input {
-    background-color: red;
     width: 100%;
+    border-radius: 8px;
+   }
+   button {
+      align-self: center;
+      margin: auto;
    }
 }
