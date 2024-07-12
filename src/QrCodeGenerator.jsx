@@ -9,14 +9,21 @@ export const QrCodeGenerator = () => {
 
   const handleGenerate = () => {
     setQrCodeValue(inputValue);
+    if (inputValue) {
+      setIsHidden(true);
+    }
+    if (!inputValue && qrCodeValue) {
+      setIsHidden(false);
+    }
     setInputValue("");
-    setIsHidden(true);
   };
 
   const onChangeGenerate = (event) => {
     setInputValue(event.target.value);
     setQrCodeValue("");
-    setIsHidden(false);
+    if (!inputValue) {
+      setIsHidden(false);
+    }
   };
 
   return (
