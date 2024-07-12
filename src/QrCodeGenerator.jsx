@@ -18,7 +18,6 @@ export const QrCodeGenerator = () => {
 
   return (
     <div>
-      <h3>QR Code Generator</h3>
       { qrCodeValue !== '' && <QRCodeSVG value={qrCodeValue} />}
       <input type="text" value={inputValue} onChange={onChangeGenerate} />
       <button type="button" onClick={handleGenerate}>

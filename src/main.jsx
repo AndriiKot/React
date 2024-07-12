@@ -4,7 +4,6 @@ import { Layout } from "./Layout";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <h1>QR Code</h1>
     <Layout />
   </>
 );
