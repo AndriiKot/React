@@ -1,3 +1,6 @@
 ﻿.wrapper__generator {
-  
+   input {
+    background-color: red;
+    width: 100%;
+   }
 }
