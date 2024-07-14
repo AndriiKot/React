@@ -1,0 +1,23 @@
+﻿.wrapper__generator {
+
+  input {
+    width: 100%;
+    border-radius: 8px;
+  }
+  button {
+    display: block;
+    margin: 0 auto;
+  }
+  .test {
+    display: block;
+    width: 128px;
+    height: 128px;
+    background-color: red;
+  }
+
+   svg {
+    display: block;
+    background-color: blue;
+    margin: 0 auto;
+   }
+}
