@@ -3,6 +3,7 @@
  "React_02__Cards_App" => 'https://github.com/AndriiKot/React_02__Cards_App',
  "React_03__Fetch_API__Posts_App" => "https://github.com/AndriiKot/React_03__Fetch_API__Posts_App",
  "React_Query_01__Fetch_API__Posts_App" => "https://github.com/AndriiKot/React_Query_01__Fetch_API__Posts_App",
+ "React_04__QR_Code" => 'https://github.com/AndriiKot/React_04__QR_Code.git'
 }
 
 
